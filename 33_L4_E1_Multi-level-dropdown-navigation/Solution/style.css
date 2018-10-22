@@ -1,0 +1,45 @@
+header{
+    border-bottom: 4px solid black;
+    padding-bottom: 1rem;
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1{
+    text-transform: uppercase;
+    float: left;
+}
+
+header article{
+    float:left;
+}
+
+header > nav > ul > li{
+    display: block; 
+}
+
+
+header > nav > ul {
+    display: flex;
+}
+
+header > nav > ul > li > ul{
+    display: flex;
+    flex-direction: column;
+}
+
+ul{
+    background: white;
+    padding: 5px;
+}
+
+li {
+background: #333238;
+color: white;
+
+}
+
+body{
+    background: lightgray
+}

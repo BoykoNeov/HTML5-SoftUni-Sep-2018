@@ -1,3 +1,19 @@
 body{
     background:#EEEEEE;
+    text-align: center;
+}
+
+li{
+    list-style-type: none;
+    background: white;
+    padding: 1rem;
+    border: 2px solid black;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+}
+
+img{
+    max-width: 350px;
+    max-height: 350px;
 }
