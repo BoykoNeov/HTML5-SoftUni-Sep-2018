@@ -1,0 +1,48 @@
+/* easier to make a specific class for the main navigation, than to use a super-specific selector */
+nav.main{
+
+}
+
+nav.main ul{
+    padding:0;
+    margin:0;
+}
+
+nav.main > ul {
+    display: flex;
+}
+
+/* matches all levels of ULs within */
+nav.main ul ul {
+    display: none;
+    position: absolute;
+    width: 12rem;
+
+}
+
+nav.main li {
+    list-style: none outside;
+    display: block;
+    position: relative;
+}
+
+nav.main li:hover > ul {
+    display: block;
+}
+
+/* makes the drop menus with equal width */
+nav.main > ul > li:not(:last-child){
+    padding-right: 0.5rem;
+}
+
+nav.main a {
+    display: block;
+    padding: 0.5rem 1rem;
+    background: #333;
+    text-decoration: none;
+    border-radius: 0.3rem; 
+}
+
+nav.main a:hover {
+    background: #060
+}
