@@ -4,8 +4,9 @@ nav.main{
 }
 
 nav.main ul{
-    padding:0;
+    padding:0.5rem;
     margin:0;
+    background: white;
 }
 
 /* the first level menus */
@@ -15,10 +16,18 @@ nav.main > ul {
 
 /* matches all levels of ULs within */
 nav.main ul ul {
-    /* generally we are not displaying the uls, but the lis*/
-    display: none;
+    /* generally we are not displaying the uls, but the lis
+        display none is used when not using animations*/
+    /* display: none; */
+
     position: absolute;
     width: 12rem;
+
+    /* this is for the animations*/
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-in;
+    transform: translateY(2rem);
 }
 
 nav.main > ul > li > ul {
@@ -27,11 +36,13 @@ nav.main > ul > li > ul {
 
     /*When position is set to absolute or fixed, the left property specifies the distance between the element's left edge and the left edge of its containing block. (The containing block is the ancestor to which the element is relatively positioned.)
 When position is set to relative, the left property specifies the distance the element's left edge is moved to the right from its normal position*/
-    left: 0;
+    left: -0.5rem;
 }
 
 nav.main > ul > li > ul > li > ul{
-    top:0;
+    /* makes the submenus level with their parent*/
+    top:-0.5rem;
+
     left: inherit;
 
     /*Specifies how far an absolutely positioned box's right margin edge is offset to the left of the right edge of the box's 'containing block' */
@@ -45,12 +56,23 @@ nav.main li {
 }
 
 nav.main li:hover > ul {
-    display: block;
+    /* again we don't need this when animating, because the ul is not display none in this case */
+    /* display: block; */
+
+    /* for the animation */
+    opacity: 1;
+    pointer-events: inherit;
+    transform: translateY(0);
 }
 
 /* makes the drop menus with equal width */
 nav.main > ul > li:not(:last-child){
     padding-right: 0.5rem;
+}
+
+/* adds padding between the vertical lis (and not after the last of them)*/
+nav.main > ul ul > li:not(:last-child){
+    padding-bottom: 0.5rem;
 }
 
 nav.main a {
