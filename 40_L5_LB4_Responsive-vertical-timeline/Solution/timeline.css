@@ -69,3 +69,52 @@
     right: -1.25rem;
     background: green;
 }
+
+@media screen and (max-width: 800px){
+    body{
+        overflow: auto;
+    }
+
+    .timeline{
+        text-align: left;
+        padding-top: 1rem;
+        padding: 0;
+        margin: 0;
+        overflow: auto;
+        border: transparent;
+    }
+
+    .timeline .inner {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: left;
+        position: absolute;
+    }
+
+    .timeline article {
+        width: 85vw;
+        left: 0;
+    }
+
+    .timeline article:nth-child(even) header:after{
+        position: absolute;
+        left: -0.75rem;
+        background: green;
+    }
+
+    .timeline article:nth-child(odd) header:after{
+        position: absolute;
+        right: -1.25rem;
+        background: orange;
+    }
+
+    .timeline article:nth-child(even) {
+        left:0;
+        text-align: left;
+    }
+
+    .timeline article:nth-child(odd) {
+        left:0;
+        text-align: left;
+    }
+}
