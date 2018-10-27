@@ -1,11 +1,9 @@
 /* easier to make a specific class for the main navigation, than to use a super-specific selector */
-nav.main{
+/* nav.main {} */
 
-}
-
-nav.main ul{
-    padding:0.5rem;
-    margin:0;
+nav.main ul {
+    padding: 0.5rem;
+    margin: 0;
     background: white;
 }
 
@@ -30,7 +28,7 @@ nav.main ul ul {
     transform: translateY(2rem);
 }
 
-nav.main > ul > li > ul {
+nav.main>ul>li>ul {
     /* takes 100% of the parent's height*/
     top: 100%;
 
@@ -39,9 +37,9 @@ When position is set to relative, the left property specifies the distance the e
     left: -0.5rem;
 }
 
-nav.main > ul > li > ul > li > ul{
+nav.main > ul > li > ul > li > ul {
     /* makes the submenus level with their parent*/
-    top:-0.5rem;
+    top: -0.5rem;
 
     left: inherit;
 
@@ -55,23 +53,13 @@ nav.main li {
     position: relative;
 }
 
-nav.main li:hover > ul {
-    /* again we don't need this when animating, because the ul is not display none in this case */
-    /* display: block; */
-
-    /* for the animation */
-    opacity: 1;
-    pointer-events: inherit;
-    transform: translateY(0);
-}
-
 /* makes the drop menus with equal width */
-nav.main > ul > li:not(:last-child){
+nav.main>ul>li:not(:last-child) {
     padding-right: 0.5rem;
 }
 
 /* adds padding between the vertical lis (and not after the last of them)*/
-nav.main > ul ul > li:not(:last-child){
+nav.main>ul ul>li:not(:last-child) {
     padding-bottom: 0.5rem;
 }
 
@@ -81,11 +69,70 @@ nav.main a {
     padding: 0.5rem 1rem;
     background: #333;
     text-decoration: none;
-    border-radius: 0.3rem; 
+    border-radius: 0.3rem;
 }
 
 /* the first line has the function that the LIs remain highlighted by the hover*/
-nav.main li:hover > a,
+nav.main li:hover>a,
 nav.main a:hover {
     background: #060
+}
+
+#main-nav-toggle {
+    display: none;
+}
+
+/* part of responsive design */
+@media screen and (max-width: 800px) {
+    nav.main {
+        display: none;
+    }
+
+    nav.main > ul {
+        /* alternative to block - flex */
+        /* flex-direction: column;*/
+
+        display: block;
+    }
+
+    nav.main ul ul {
+        opacity: 1;
+        pointer-events: inherit;
+        width:auto;
+        position: static;
+        transform: translate(0,0);
+        padding: 0.5rem 0 0.5rem 1.5rem;
+    }
+
+    /* changes the color of the submenus in oroder to better disitinguish the level of menu in a small display */
+    nav.main ul ul a {
+        background: #CCC;
+        color: #000;
+    }
+
+    nav.main > ul > li:not(:last-child){
+        padding: 0 0 0.5rem 0;
+    }
+
+    #main-nav-toggle:checked+header nav.main {
+        display: block;
+        flex: 1 0 100%
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #toggle {
+        display: none;
+    }
+
+    /* this was moved here, in order to move it here, that's way hover is not a problem anymore in a small screen*/     
+    nav.main li:hover > ul {
+        /* again we don't need this when animating, because the ul is not display none in this case */
+        /* display: block; */
+    
+        /* for the animation */
+        opacity: 1;
+        pointer-events: inherit;
+        transform: translateY(0);
+    }
 }

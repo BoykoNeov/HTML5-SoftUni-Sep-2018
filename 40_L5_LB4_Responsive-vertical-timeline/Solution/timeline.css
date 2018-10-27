@@ -1,0 +1,71 @@
+.timeline{
+    border: 2px solid #999;
+    text-align: center;
+    padding-top: 2rem;
+    border-radius: 0.3rem;
+}
+
+.timeline > p:first-child {
+    padding: 0;
+    border: 2px solid #999;
+    border-radius: 0.3rem;
+    display: inline-block;
+}
+
+.timeline > p:first-child a {
+    padding:0.5rem 1rem;
+    display:block;
+    text-decoration: none;
+    color: black;
+}
+
+.timeline > p:first-child a:focus,
+.timeline > p:first-child a:hover {
+    background: black;
+    color: white;
+}
+
+.timeline .inner {
+    position: relative;
+    width: 0.5rem;
+    margin: 0 auto;
+    background: #999;
+    padding: 2rem 0;
+    text-align: left;
+}
+
+.timeline article {
+    width: 40vw;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.timeline article header h3{
+    font-style: italic
+}
+
+/* this is the circle after each article header*/
+.timeline article header:after {
+    display: block;
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    border: 0.4rem solid #999;
+    border-radius: 50%;
+    position: absolute;
+    top: 0; 
+    left: -0.75rem;
+    z-index: 1;
+    background: orange;
+}
+
+.timeline article:nth-child(even) {
+    right: 40vw;
+    text-align: right;
+}
+
+.timeline article:nth-child(even) header:after{
+    left: inherit;
+    right: -1.25rem;
+    background: green;
+}

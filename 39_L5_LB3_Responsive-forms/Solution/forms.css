@@ -1,0 +1,104 @@
+form{
+
+}
+
+fieldset, legend{
+background: #FFF;
+border: 2px solid black;
+}
+
+fieldset{
+    position: relative;
+    padding: 2rem;
+}
+
+fieldset legend{
+display: block;
+position: absolute;
+border: 1px solid #000;
+border-radius: 0.2rem;
+padding: 0.3rem 1.2rem;
+
+/* - so that the borders can overlap*/
+top: -1.5rem; left: -1px;
+}
+
+form label{
+    display: block;
+}
+
+.field{
+    display: flex;
+    align-items: center;
+}
+
+/* positions the input fields relative to the whole form*/
+.field > label {
+    flex: 0 0 6rem;
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+.input {
+    /* permits the input to grow*/
+    flex: 1 0 auto;
+
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.input input {
+    order:1;
+    border:none;
+    padding: 0.3rem 0.6rem;
+    padding-left: 0.1rem;
+
+    /* only elements with position absolute or relative can have z-indexes*/
+    position: relative;
+    z-index: 3;
+    background:none;
+    outline: none;
+
+    /* this permits the input to take the whole space*/
+    flex: 1 0 auto;
+}
+
+/* places the icons before the input field, without changing the order in the html */
+.input .fas {
+    order:0;
+    position: relative;
+    z-index: 2;
+    line-height: 1;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+.input .actions{
+border: 1px solid #CCC;
+position: absolute;
+top:0; left:0; right:0; bottom:0;
+border-radius: 0.3rem;
+z-index: 0;
+}
+
+/* colorizes the border green when focused */
+.input input:focus + .actions{
+    border-color: #090;
+}
+
+/* makes the icon green, when the field is active */
+.input input:focus + .actions + .fas{
+    color:green;
+}
+
+@media screen and (max-width: 800px){
+    .field{
+        display: block;
+    }
+
+    .field > label {
+        width:auto;
+        text-align: left;
+    }
+}
