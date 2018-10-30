@@ -1,0 +1,35 @@
+.gallery {
+    background: lightgray;
+}
+
+.gallery > ul {
+    display: flex;
+    flex-shrink: 0;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gallery > ul > li {
+    background: white;
+    margin: 1rem;
+    padding: 0.2rem;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5rem solid black;
+
+    /* having two shadows at the same time - outside and inside*/
+    box-shadow: 0 0 1.1rem black, inset 0 0 5px;
+}
+
+
+.gallery >ul > li > img {
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto; */
+    width: 90%;
+}
