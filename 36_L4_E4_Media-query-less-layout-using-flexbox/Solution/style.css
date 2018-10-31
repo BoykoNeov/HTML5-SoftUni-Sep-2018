@@ -1,0 +1,66 @@
+body{
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: flex;
+    min-height: calc(100vh - 20vh);
+    flex-wrap: wrap;
+
+}
+
+* {
+    box-sizing: border-box; 
+   }
+
+body {
+    background: rgb(237, 237, 237);
+    /* border: 2px solid black; */
+    padding: 1rem 1rem 1rem 1rem;
+    min-width: 15rem;
+}
+
+body > * {
+    background: white;
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 1 px solid gray;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    box-shadow:0px 0px 0.8rem gray;
+}
+
+body > header {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 90vw;
+    min-width: 10rem;
+    min-height: 8rem;
+    /* background: greenyellow; */
+}
+
+body > aside {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 25vw;
+    /* background: red; */
+    min-width: 3rem;
+    min-height: 8rem;
+}
+
+body > main {
+    flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: 49vw;
+    /* background: purple; */
+    min-width: 7rem;
+    min-height: 13rem;
+}
+
+body > footer {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 90vw;
+    /* background: orange; */
+    min-width: 10rem;
+    min-height: 8rem;
+}
