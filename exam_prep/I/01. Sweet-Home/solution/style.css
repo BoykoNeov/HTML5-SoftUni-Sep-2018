@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+html{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+main{
+    display: flex;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+h2 {
+    font-size:2.5rem;
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+h4 {
+    color:gray;
+    padding-bottom:0;
+    margin-bottom: 0;
+}
+
+main > aside {
+    margin: 1rem;
+    padding: 1rem;
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 20vw;
+}
+
+main > aside > p > img {
+    width: 320px;
+   height: 220px;
+}
+
+main > article {
+    margin: 1rem;
+    padding: 1rem;
+    flex-grow: 2;
+}
+
+main > article > p {
+    column-count: 2;
+    column-gap: 3rem;
+}
+
+.articleHead {
+    border-left: 3px solid gray;
+    overflow: hidden;
+    margin: 2rem;
+    margin-left:0;
+    padding: 1rem;
+    padding-top:0;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+}
